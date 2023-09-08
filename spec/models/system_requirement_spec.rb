@@ -9,4 +9,6 @@ RSpec.describe SystemRequirement, type: :model do
   it { is_expected.to validate_presence_of(:video_board) }
   
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
+
+  it { is_expected.to have_many(:games).dependent(:restrict_with_error) }
 end
